@@ -12,7 +12,7 @@
     </properties>
     <!-- 对日志文件之类的进行配置 -->
     <settings>
-        <setting name="" value=""/>
+        <setting name="logImpl" value="log4j"/>
     </settings>
 
     <!-- 配置别名 -->
