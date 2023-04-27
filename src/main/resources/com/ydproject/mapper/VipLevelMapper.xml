@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ydproject.mapper.VipLevelMapper">
+    <resultMap id="vipLe1" type="vipLevel">
+        <id column="id" property="id"/>
+        <result property="level" column="level"/>
+        <result property="vipdetails" column="vipdetails"/>
+        <collection property="costomers" column="id" select="com.ydproject.mapper.CostomerMapper.selectByVid">
+            <id column="id" property="id"/>
+            <result property="account" column="account"/>
+            <result property="name" column="name" />
+            <result property="password" column="password"/>
+            <result property="vipId" column="vip_id"/>
+            <result property="details" column="details"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectById" resultMap="vipLe1">
+        select v.* from vip_level v where id = #{id}
+    </select>
+    <select id="selectAll" resultType="vipLevel">
+        select * from vip_level
+    </select>
+</mapper>

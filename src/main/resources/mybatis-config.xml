@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部配置文件 -->
+    <properties resource="db.properties"/>
+        <!-- 可以优先使用这里配置的属性连接数据库
+        <property name="username" value="root">
+         -->
+    <!-- 对日志文件之类的进行配置 -->
+    <settings>
+        <setting name="logImpl" value="log4j"/>
+    </settings>
+
+    <!-- 配置别名 -->
+    <typeAliases>
+        <!-- 这里可以为每一个类单独配置别名
+        <typeAlias type="com.yyds.entity.Film" alias="Film"/>
+        -->
+        <!-- package：为一个包下的所有类配置别名，其别名就是类名 -->
+        <package name="com.ydproject.mapper"/>
+        <package name="com.ydproject.entity"/>
+    </typeAliases>
+    <!-- 配置环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--
+                三个参数 type
+                    1.UNPOOLED
+                    2.POOLED
+                    3.JNDI
+            -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 注册mapper接口的mybatis.xml实现 -->
+    <mappers>
+<!--        <mapper resource="./mapper/FilmMapper.xml" />-->
+        <mapper resource="./com/ydproject/mapper/CostomerMapper.xml "/>
+        <mapper resource="./com/ydproject/mapper/VipLevelMapper.xml"/>
+    </mappers>
+</configuration>
