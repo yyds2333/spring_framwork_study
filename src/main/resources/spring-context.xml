@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- c标签和p标签以及aop切面支持 -->
+<!-- aop切面编程支持，mvc支持 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/mvc
+https://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/>
+<!--    <bean id="dataSource"-->
+<!--          class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/newsql?-->
+<!--useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=GMT&amp;useSSL=tru-->
+<!--e"/>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="54188"/>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;create a sqlSessionFactory&ndash;&gt;-->
+<!--    <bean id="sqlSessionFactory"-->
+<!--          class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--        &lt;!&ndash;link mybatis config file&ndash;&gt;-->
+<!--        <property name="configLocation" value="classpath:mybatis-config.xml"/>-->
+<!--        <property name="mapperLocations"-->
+<!--                  value="classpath:com/yyds/mapper/*.xml"/>-->
+<!--    </bean>-->
+<!--    &lt;!&ndash;create a spring sqlSessionTemplate is mybatis's sqlSession &ndash;&gt;-->
+<!--    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">-->
+<!--        &lt;!&ndash;only accross constructor create sqlSessionFactory，because it dont have-->
+<!--set method&ndash;&gt;-->
+<!--        <constructor-arg index="0" ref="sqlSessionFactory"/>-->
+<!--    </bean>-->
+</beans>
